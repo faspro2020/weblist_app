@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  get 'links/index'
-  root "links#index"
+  get 'categorys/index'
+  root "categorys#index"
 end
