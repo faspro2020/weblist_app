@@ -1,0 +1,37 @@
+* { 
+  box-sizing: border-box;
+}
+
+@import "header";
+.Main-wrapper {
+  width: 100vw;
+  .Category__content {
+    margin: 10px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.1);
+    &__area {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      &__left {
+
+      }
+
+      &__right {
+        width: 300px;
+        display: flex;
+        justify-content: space-around;
+        &__destory {
+
+        }
+        &__edit {
+          
+        }
+      }   
+    }
+
+    &__comment {
+        
+    }
+  }
+}
