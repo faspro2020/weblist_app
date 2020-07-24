@@ -1,15 +1,16 @@
 .Main-wrapper
   %ul
-    %li.Category__content
-      .Category__content__area
-        .Category__content__area__left
-          = link_to "料理", "#"
-        .Category__content__area__right
-          .Category__content__area__right__destory
-            削除
-          .Category__content__area__right__edit
-            編集
-      .Category__content__comment
-        ＜コメント＞
-        %br
-        12345678901234567890
+    - @category.each do |ca|
+      %li.Category__content
+        .Category__content__area
+          .Category__content__area__left
+            = link_to ca.name, "#"
+          .Category__content__area__right
+            .Category__content__area__right__destory
+              削除
+            .Category__content__area__right__edit
+              編集
+        .Category__content__comment
+          ＜コメント＞
+          %br
+          12345678901234567890
