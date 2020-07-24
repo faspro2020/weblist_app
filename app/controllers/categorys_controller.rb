@@ -1,10 +1,12 @@
 class CategorysController < ApplicationController
   def index
-    @category = Category.all
+    @categorys = Category.all
   end
 
   def create
-    Category.create(category_params)
+    @category = Category.new(category_params)
+    @category.save
+    redirect_to :root
   end
 
   private

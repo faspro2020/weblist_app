@@ -1,6 +1,6 @@
 .Main-wrapper
   %ul
-    - @category.each do |ca|
+    - @categorys.each do |ca|
       %li.Category__content
         .Category__content__area
           .Category__content__area__left
@@ -14,3 +14,10 @@
           ＜コメント＞
           %br
           12345678901234567890
+
+.Main-form
+  = form_with model: @category, html: {class: "Form"}, local: true do |f|
+    .Form__content
+      = f.text_field :name, placeholder: "URLを入力してください", class: "Form__area"
+      = f.text_field :comment, placeholder: "コメントを入力してください", class: "Form__area"
+    = f.submit "URLを追加", class: "Form__btn"
