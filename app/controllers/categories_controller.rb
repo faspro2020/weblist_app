@@ -10,7 +10,7 @@ class CategoriesController < ApplicationController
 
   private
   def category_params
-    params.require(:category).permit(:name, :comment)
+    params.permit(:name, :comment)
   end
 
 end
