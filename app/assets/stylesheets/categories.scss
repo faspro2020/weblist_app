@@ -1,0 +1,75 @@
+* { 
+  box-sizing: border-box;
+}
+
+@import "header";
+.Main-wrapper {
+  overflow: auto;
+  width: 100vw;
+  height: calc(100vh - 200px);
+  .Category__content {
+    margin: 10px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.1);
+    &__area {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      &__left {
+
+      }
+
+      &__right {
+        width: 300px;
+        display: flex;
+        justify-content: space-around;
+        &__destory {
+
+        }
+        &__edit {
+          
+        }
+      }   
+    }
+
+    &__comment {
+        
+    }
+  }
+}
+
+.Main-form {
+  height: 100px;
+  background-color: #303030;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  .Form {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    &__content {
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+      width: 100%;
+      .Form__area {
+        width: 100%;
+        margin-left: 20px;
+      }
+    }
+    &__btn {
+      display: flex;
+      align-items: center;
+      margin: 10px;
+      height: 60px;
+      &__area {
+        background-color: #38AEF0;
+        color: #ffffff;
+        margin: 10px;
+        width: 150px;
+        height: 50px;
+      }
+    }
+  }
+}

@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  resources :categorys, only: [:index,:create]
-  root "categorys#index"
+  resources :categories, only: [:index,:create]
+  root "categories#index"
 end
