@@ -2,11 +2,11 @@
   box-sizing: border-box;
 }
 
-@import "header";
-
-.Main-wrapper {
+.Show-wrapper {
+  overflow: auto;
   width: 100vw;
-  .Category__content {
+  height: calc(100vh - 200px);
+  .Link__content {
     margin: 10px;
     padding: 10px;
     background-color: rgba(0, 0, 0, 0.1);

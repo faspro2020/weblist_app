@@ -15,7 +15,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @links = Link.all
+    @links = Link.includes(:category)
   end
 
   def destroy
