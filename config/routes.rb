@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  get 'categorys/index'
-  root "categorys#index"
+  resources :categories, only: [:index,:create]
+  root "categories#index"
 end
