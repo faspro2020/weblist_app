@@ -1,22 +1,25 @@
 .Main-wrapper
   %ul
-    - @categories.each do |ca|
-      %li.Category__content
-        .Category__content__area
-          .Category__content__area__left
-            = link_to ca.name, "#"
-          .Category__content__area__right
-            = link_to "削除", category_path(ca.id), method: :delete
-        .Category__content__comment
+    - @links.each do |link|
+      %li.Link__content
+        .Link__content__area
+          .Link__content__area__left
+            = link_to link.name, "#{link.url}"
+          .Link__content__area__right
+            .Link__content__area__right__destory
+              削除
+            .Link__content__area__right__edit
+              編集
+        .Link__content__comment
           ＜コメント＞
           %br
-          12345678901234567890
+            = link.comment
 
 .Main-form
-  = form_with model: @category, html: {class: "Form"}, local: true do |f|
+  = form_with model: @link, html: {class: "Form"}, local: true do |f|
     .Form__content
       = f.text_field :name, placeholder: "サイト名を入力 google", class: "Form__area"
-      = f.text_field :url, placeholder: "URLを入力 https://www~", class: "Form__area"
+      = f.text_field :url, placeholder: "URLを入力 https://www ~ ", class: "Form__area"
       = f.text_field :comment, placeholder: "コメントを入力してください", class: "Form__area"
     .Form__btn
       = f.submit "追加", class: "Form__btn__area"

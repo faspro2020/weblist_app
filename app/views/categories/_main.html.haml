@@ -4,9 +4,9 @@
       %li.Category__content
         .Category__content__area
           .Category__content__area__left
-            = link_to ca.name, "#"
+            = link_to ca.name, category_path(ca.id)
           .Category__content__area__right
-            = link_to "削除", category_path(ca.id), method: :delete
+            = link_to "削除", method: :delete
         .Category__content__comment
           ＜コメント＞
           %br

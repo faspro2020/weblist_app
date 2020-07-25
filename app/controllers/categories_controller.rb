@@ -5,11 +5,17 @@ class CategoriesController < ApplicationController
   end
 
   def create
-    @category = Category.create(category_params)
-    redirect_to :root
+    @category = Category.new(category_params)
+    @link = Link.new(category_params)
+    if @category.save
+      redirect_to :root
+    else @link.save
+      redirect_to category_path
+    end
   end
 
   def show
+    @links = Link.all
   end
 
   def destroy
