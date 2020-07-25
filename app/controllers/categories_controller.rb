@@ -9,6 +9,9 @@ class CategoriesController < ApplicationController
     redirect_to :root
   end
 
+  def show
+  end
+
   def destroy
     category = Category.find(params[:id])
     if category.destroy
