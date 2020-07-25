@@ -1,7 +1,7 @@
 class CategoriesController < ApplicationController
-  before_action :set_category, only: [:index]
 
   def index
+    @categories = Category.all
   end
 
   def create
@@ -22,10 +22,6 @@ class CategoriesController < ApplicationController
   private
   def category_params
     params.permit(:name, :comment)
-  end
-
-  def set_category
-    @categories = Category.all
   end
 
 end
