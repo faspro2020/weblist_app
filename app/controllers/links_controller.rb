@@ -4,6 +4,9 @@ class LinksController < ApplicationController
     redirect_to category_path(params[:category_id])
   end
 
+  def destroy
+  end
+
   private
   def link_params
     params.require(:link).permit(:name, :url, :comment, :category_id)
