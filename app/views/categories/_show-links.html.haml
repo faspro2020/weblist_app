@@ -7,7 +7,7 @@
             = link_to link.name, "#{link.url}"
           .Link__content__area__right
             .Link__content__area__right__destory
-              削除
+              = link_to "削除", category_link_path(category_id: @category, id: link.id), method: :delete
             .Link__content__area__right__edit
               編集
         .Link__content__comment

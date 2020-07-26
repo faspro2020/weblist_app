@@ -6,26 +6,25 @@ class CategoriesController < ApplicationController
 
   def create
     @category = Category.create(category_params)
-    if @category.save
-      redirect_to :root
-    end
+    @category.save
+    redirect_to :root
   end
 
   def show
     @category = Category.find(params[:id])
-    @links = Link.all
     @link = @category.links.new(params[:category_id])
+    @links = Link.includes(:category)
   end
 
   def destroy
     category = Category.find(params[:id])
-    if category.destroy
-      redirect_to :root
-    end
+    category.destroy
+    redirect_to root_path
   end
 
   private
   def category_params
     params.permit(:name, :comment)
   end
+  
 end
