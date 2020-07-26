@@ -1,0 +1,18 @@
+.Show-wrapper
+  %ul
+    - @links.each do |link|
+      %li.Link__content
+        .Link__content__area
+          .Link__content__area__left
+            = link_to link.name, "#{link.url}"
+          .Link__content__area__right
+            .Link__content__area__right__destory
+              削除
+            .Link__content__area__right__edit
+              編集
+        .Link__content__comment
+          ＜コメント＞
+          %br
+            = link.comment
+
+= render "links/form-link"

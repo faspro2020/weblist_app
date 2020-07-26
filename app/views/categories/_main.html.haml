@@ -4,13 +4,13 @@
       %li.Category__content
         .Category__content__area
           .Category__content__area__left
-            = link_to ca.name, "#"
+            = link_to ca.name, category_path(ca.id)
           .Category__content__area__right
-            = link_to "削除", category_path(ca.id), method: :delete
+            = link_to "削除", method: :delete
         .Category__content__comment
           ＜コメント＞
           %br
-          12345678901234567890
+            = ca.comment
 
 .Main-form
   = form_with model: @category, html: {class: "Form"}, local: true do |f|
@@ -18,4 +18,4 @@
       = f.text_field :name, placeholder: "カテゴリ名を入力してください", class: "Form__area"
       = f.text_field :comment, placeholder: "コメントを入力してください", class: "Form__area"
     .Form__btn
-      = f.submit "URLを追加", class: "Form__btn__area"
+      = f.submit "追加", class: "Form__btn__area"
