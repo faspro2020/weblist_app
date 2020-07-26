@@ -5,8 +5,8 @@ class CategoriesController < ApplicationController
   end
 
   def create
-    @category = Category.new(category_params)
-    @link = Link.new(category_params)
+    @category = Category.create(category_params)
+    @link = Link.new(link_params)
     if @category.save
       redirect_to :root
     else @link.save
@@ -16,6 +16,7 @@ class CategoriesController < ApplicationController
 
   def show
     @links = Link.includes(:category)
+    @link = Link.find(params[:id])
   end
 
   def destroy
@@ -30,4 +31,7 @@ class CategoriesController < ApplicationController
     params.permit(:name, :comment)
   end
 
+  def link_params
+    params.require(:link).permit(:name, :url, :comment)
+  end
 end
