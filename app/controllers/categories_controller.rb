@@ -15,7 +15,6 @@ class CategoriesController < ApplicationController
     @category = Category.find(params[:id])
     @links = Link.all
     @link = @category.links.new(params[:category_id])
-    # redirect_to category_path(@category.id)
   end
 
   def destroy
