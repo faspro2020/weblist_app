@@ -4,8 +4,16 @@ class LinksController < ApplicationController
     redirect_to category_path(params[:category_id])
   end
 
+  def destroy
+    @category = Category.find(params[:category_id])
+    link = @category.links.find(params[:id])
+    link.destroy
+    redirect_to category_path(params[:category_id])
+  end
+
   private
   def link_params
-    params.require(:link).permit(:name, :url, :comment, :category_id)
+    @category = Category.find(params[:category_id])
+    params.require(:link).permit(:name, :url, :comment).merge(category_id: "#{@category.id}")
   end
 end

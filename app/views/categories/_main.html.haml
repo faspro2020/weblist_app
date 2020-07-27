@@ -6,7 +6,7 @@
           .Category__content__area__left
             = link_to ca.name, category_path(ca.id)
           .Category__content__area__right
-            = link_to "削除", method: :delete
+            = link_to "削除", category_path(ca.id), method: :delete
         .Category__content__comment
           ＜コメント＞
           %br
