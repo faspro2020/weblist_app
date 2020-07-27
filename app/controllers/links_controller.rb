@@ -6,7 +6,7 @@ class LinksController < ApplicationController
 
   def destroy
     @category = Category.find(params[:category_id])
-    link = Link.find(params[:id])
+    link = @category.links.find(params[:id])
     link.destroy
     redirect_to category_path(params[:category_id])
   end
