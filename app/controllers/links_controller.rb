@@ -11,6 +11,9 @@ class LinksController < ApplicationController
     redirect_to category_path(params[:category_id])
   end
 
+  def edit
+  end
+  
   private
   def link_params
     @category = Category.find(params[:category_id])
