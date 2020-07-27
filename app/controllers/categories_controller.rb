@@ -1,6 +1,8 @@
 class CategoriesController < ApplicationController
 
   def index
+    @user = "ユーザー名 (サインイン・マイページ)"
+    @title = "My Web list"
     @categories = Category.all
   end
 
@@ -13,10 +15,10 @@ class CategoriesController < ApplicationController
   def show
     @category = Category.find(params[:id])
     @link = @category.links.new(params[:category_id])
-    @links = Link.includes(:category)
+    @links = @category.links.all
   end
 
-  def destroy
+  def destroy 
     category = Category.find(params[:id])
     category.destroy
     redirect_to root_path

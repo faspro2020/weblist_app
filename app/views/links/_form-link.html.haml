@@ -4,6 +4,6 @@
       = f.text_field :name, placeholder: "サイト名を入力 google", class: "Form__area"
       = f.text_field :url, placeholder: "URLを入力 https://www ~ ", class: "Form__area"
       = f.text_field :comment, placeholder: "コメントを入力してください", class: "Form__area"
-      = f.hidden_field :category_id, value: @category.id
+      -# = f.hidden_field :category_id, value: @category.id
     .Form__btn
       = f.submit "追加", class: "Form__btn__area"

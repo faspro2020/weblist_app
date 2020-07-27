@@ -13,6 +13,7 @@ class LinksController < ApplicationController
 
   private
   def link_params
-    params.require(:link).permit(:name, :url, :comment, :category_id)
+    @category = Category.find(params[:category_id])
+    params.require(:link).permit(:name, :url, :comment).merge(category_id: "#{@category.id}")
   end
 end
