@@ -12,8 +12,13 @@ class LinksController < ApplicationController
   end
 
   def edit
+    @category = Category.find(params[:category_id])
+    @link = @category.links.find(params[:id])
   end
   
+  def update
+  end
+
   private
   def link_params
     @category = Category.find(params[:category_id])
