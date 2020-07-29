@@ -28,5 +28,4 @@ class CategoriesController < ApplicationController
     params.permit(:name, :comment).merge(user_id: current_user.id)
   end
   
-
 end
