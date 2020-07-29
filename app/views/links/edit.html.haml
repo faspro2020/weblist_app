@@ -1,8 +1,8 @@
 .Main-form
   = form_with model: [@category, @link], local: true, html: {class: "Form"} do |f|
     .Form__content
-      = f.text_field :name, placeholder: "サイト名を入力 google", class: "Form__area"
-      = f.text_field :url, placeholder: "URLを入力 https://www ~ ", class: "Form__area"
+      = f.text_field :name, placeholder: "サイト名を入力 例：google", class: "Form__area"
+      = f.text_field :url, placeholder: "URLを入力 例：https://www ~ ", class: "Form__area"
       = f.text_field :comment, placeholder: "コメントを入力してください", class: "Form__area"
     .Form__btn
       = f.submit "追加", class: "Form__btn__area"
