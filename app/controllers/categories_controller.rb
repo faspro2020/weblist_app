@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-  before_action :view_parts, only: [:index, :show]
+
 
   def index
     @categories = Category.all
@@ -28,8 +28,5 @@ class CategoriesController < ApplicationController
     params.permit(:name, :comment)
   end
   
-  def view_parts
-    @user = "ユーザー名 (サインイン・マイページ)"
-    @title = "My Web list"
-  end
+
 end
