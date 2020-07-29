@@ -20,7 +20,7 @@ class CategoriesController < ApplicationController
   def destroy 
     category = Category.find(params[:id])
     category.destroy
-    render :index
+    redirect_to root_path
   end
 
   private

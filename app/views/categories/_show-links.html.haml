@@ -9,7 +9,7 @@
             .Link__content__area__right__destory
               = link_to "削除", category_link_path(category_id: @category, id: link.id), method: :delete
             .Link__content__area__right__edit
-              編集
+              = link_to "編集", edit_category_link_path(category_id: @category, id: link.id), method: :get
         .Link__content__comment
           ＜コメント＞
           %br
