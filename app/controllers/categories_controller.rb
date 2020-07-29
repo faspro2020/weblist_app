@@ -25,7 +25,7 @@ class CategoriesController < ApplicationController
 
   private
   def category_params
-    params.permit(:name, :comment)
+    params.permit(:name, :comment).merge(user_id: current_user.id)
   end
   
 
