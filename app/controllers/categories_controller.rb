@@ -2,10 +2,6 @@ class CategoriesController < ApplicationController
 
 
   def index
-    # categories = current_user.categories
-    # @categories = categories.include(:user)
-    # @categories = Category.all
-    # @categories = current_user.categories
   end
 
   def create
