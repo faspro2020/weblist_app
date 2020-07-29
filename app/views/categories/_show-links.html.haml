@@ -4,7 +4,7 @@
       %li.Link__content
         .Link__content__area
           .Link__content__area__left
-            = link_to link.name, "#{link.url}"
+            = link_to link.name, "#{link.url}", target: :_blank, rel: "noopener noreferrer"
           .Link__content__area__right
             .Link__content__area__right__destory
               = link_to "削除", category_link_path(category_id: @category, id: link.id), method: :delete
