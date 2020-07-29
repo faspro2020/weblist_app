@@ -4,17 +4,15 @@
       = link_to "#{@title}", root_path
     %li.Header__block
       -# 機能 追加予定箇所
-    %li.Header__user-content
+    %li.user-nav
       - if user_signed_in?
-        .user-nav
-          .user-nav__name
-            = @user
-          .user-nav__log
-            = link_to "ログアウト", destroy_user_session_path, method: :delete
-            
+        .user-nav__name
+          = @user
+        .user-nav__log
+          = link_to "ログアウト", destroy_user_session_path, method: :delete
+
       - else
-        .user-nav
-          .user-nav__name
-            = link_to "ログイン", new_user_session_path
-          .user-nav__log
-            = link_to "新規登録", new_user_registration_path,
+        .user-nav__name
+          = link_to "新規登録", new_user_registration_path
+        .user-nav__log
+          = link_to "ログイン", new_user_session_path
