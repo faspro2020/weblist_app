@@ -1,21 +1,25 @@
-.Main-wrapper
-  %ul
-    - @categories.each do |ca|
-      %li.Category__content
-        .Category__content__area
-          .Category__content__area__left
-            = link_to ca.name, category_path(ca.id)
-          .Category__content__area__right
-            = link_to "削除", category_path(ca.id), method: :delete
-        .Category__content__comment
-          ＜コメント＞
-          %br
-            = ca.comment
+- if user_signed_in?
+  .Main-wrapper
+    %ul
+      - current_user.categories.each do |ca|
+        %li.Category__content
+          .Category__content__area
+            .Category__content__area__left
+              = link_to ca.name, category_path(ca.id)
+            .Category__content__area__right
+              = link_to "削除", category_path(ca.id), method: :delete
+          .Category__content__comment
+            ＜コメント＞
+            %br
+              = ca.comment
 
-.Main-form
-  = form_with model: @category, html: {class: "Form"}, local: true do |f|
-    .Form__content
-      = f.text_field :name, placeholder: "カテゴリ名を入力してください", class: "Form__area"
-      = f.text_field :comment, placeholder: "コメントを入力してください", class: "Form__area"
-    .Form__btn
-      = f.submit "追加", class: "Form__btn__area"
+  .Main-form
+    = form_with model: @category, html: {class: "Form"}, local: true do |f|
+      .Form__content
+        = f.text_field :name, placeholder: "カテゴリ名を入力してください", class: "Form__area"
+        = f.text_field :comment, placeholder: "コメントを入力してください", class: "Form__area"
+      .Form__btn
+        = f.submit "追加", class: "Form__btn__area"
+- else
+  .Not-login-message
+    ※ログインすると使用することができます。
