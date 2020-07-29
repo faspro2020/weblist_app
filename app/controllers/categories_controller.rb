@@ -2,7 +2,10 @@ class CategoriesController < ApplicationController
 
 
   def index
-    @categories = Category.all
+    # categories = current_user.categories
+    # @categories = categories.include(:user)
+    # @categories = Category.all
+    # @categories = current_user.categories
   end
 
   def create
@@ -25,7 +28,7 @@ class CategoriesController < ApplicationController
 
   private
   def category_params
-    params.permit(:name, :comment)
+    params.permit(:name, :comment).merge(user_id: current_user.id)
   end
   
 

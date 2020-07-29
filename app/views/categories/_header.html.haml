@@ -7,7 +7,7 @@
     %li.user-nav
       - if user_signed_in?
         .user-nav__name
-          = @user
+          = "ユーザー名: #{current_user.nickname}"
         .user-nav__log
           = link_to "ログアウト", destroy_user_session_path, method: :delete
 
