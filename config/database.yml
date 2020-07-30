@@ -49,6 +49,8 @@ test:
 #
 production:
   <<: *default
-  database: weblist_app_production
   username: weblist_app
   password: <%= ENV['WEBLIST_APP_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
