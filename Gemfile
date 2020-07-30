@@ -56,3 +56,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'pry-rails'
 gem "haml-rails", ">= 1.0", '<= 2.0.1'
 gem 'devise'
+
+gem 'pg', '~> 1.2', '>= 1.2.3'
+# gem install pg -v '1.2.3'にて直接インストールを実行。
